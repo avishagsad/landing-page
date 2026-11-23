@@ -1,0 +1,74 @@
+:root {
+  color-scheme: light;
+  --fondo: #f5f8ff;
+  --azul: #244fc5;
+  --azul-oscuro: #173783;
+  --tinta: #172544;
+  --suave: #66738d;
+  --borde: #dce5f5;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--fondo); color: var(--tinta); line-height: 1.6; }
+a { color: inherit; }
+a:focus-visible, summary:focus-visible { outline: 3px solid #e6a62d; outline-offset: 4px; border-radius: 4px; }
+.contenedor { width: min(1100px, calc(100% - 48px)); margin-inline: auto; }
+.salto { position: absolute; z-index: 5; top: 10px; left: 10px; padding: 10px 14px; transform: translateY(-160%); background: white; color: var(--azul-oscuro); border-radius: 8px; }
+.salto:focus { transform: translateY(0); }
+.encabezado { border-bottom: 1px solid rgba(220,229,245,.8); }
+.barra { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.marca { color: var(--azul-oscuro); font-size: .92rem; font-weight: 850; letter-spacing: .09em; text-decoration: none; }
+nav { display: flex; gap: 34px; }
+nav a { color: #344362; font-size: .94rem; font-weight: 600; text-decoration: none; }
+nav a:hover { color: var(--azul); }
+.presentacion { min-height: 420px; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 48px; padding-block: 40px; }
+.presentacion-texto { max-width: 570px; }
+.eyebrow { margin: 0 0 12px; color: var(--azul); font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+h1, h2, h3, p { margin-top: 0; }
+h1 { max-width: 620px; margin-bottom: 20px; color: var(--azul-oscuro); font-size: clamp(2.5rem, 4vw, 3.25rem); line-height: 1.06; letter-spacing: -.055em; }
+.bajada { max-width: 530px; margin-bottom: 28px; color: #53617b; font-size: 1.08rem; line-height: 1.75; }
+.boton { display: inline-flex; align-items: center; gap: 14px; padding: 12px 18px; border-radius: 9px; background: var(--azul); color: white; font-weight: 700; text-decoration: none; box-shadow: 0 5px 14px #244fc526; }
+.boton:hover { background: var(--azul-oscuro); }
+.boton span { font-size: 1.2rem; }
+.ilustracion { display: grid; place-items: center; }
+.ilustracion svg { display: block; width: min(100%, 440px); height: auto; }
+.seccion { padding-block: 40px; background: #edf3ff; }
+.encabezado-seccion { max-width: 640px; margin-bottom: 34px; }
+h2 { color: var(--azul-oscuro); font-size: clamp(1.85rem, 3.4vw, 2.65rem); line-height: 1.2; letter-spacing: -.035em; }
+.encabezado-seccion h2 { margin-bottom: 0; }
+.tarjetas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.tarjeta { min-width: 0; padding: 26px 25px 28px; border: 1px solid var(--borde); border-radius: 16px; background: #fff; box-shadow: 0 8px 24px #203b7110; }
+.numero { display: inline-grid; width: 38px; height: 38px; margin-bottom: 22px; place-items: center; border-radius: 11px; background: #eaf0ff; color: var(--azul); font-size: .78rem; font-weight: 800; }
+.tarjeta h3 { margin-bottom: 9px; color: var(--azul-oscuro); font-size: 1.17rem; }
+.tarjeta p { margin-bottom: 0; color: var(--suave); line-height: 1.7; }
+.participar { display: grid; grid-template-columns: .8fr 1.2fr; align-items: start; gap: 56px; padding-block: 40px; }
+.participar h2 { margin-bottom: 0; }
+details { padding: 19px 22px; border: 1px solid var(--borde); border-radius: 13px; background: white; }
+summary { color: var(--azul-oscuro); font-weight: 750; cursor: pointer; }
+details p { margin: 13px 0 2px; color: var(--suave); line-height: 1.75; }
+footer { padding-block: 23px; border-top: 1px solid var(--borde); color: #66738d; font-size: .9rem; }
+@media (max-width: 720px) {
+  .contenedor { width: min(100% - 36px, 560px); }
+  .barra { min-height: 72px; align-items: flex-start; flex-direction: column; justify-content: center; gap: 8px; }
+  nav { gap: 22px; }
+  nav a { font-size: .88rem; }
+  .presentacion { min-height: 0; grid-template-columns: 1fr; gap: 24px; padding-block: 58px 48px; }
+  h1 { font-size: clamp(2.65rem, 11vw, 4rem); }
+  .ilustracion svg { width: min(100%, 360px); }
+  .seccion { padding-block: 58px 64px; }
+  .tarjetas { grid-template-columns: 1fr; gap: 14px; }
+  .tarjeta { padding: 22px; }
+  .numero { margin-bottom: 15px; }
+  .participar { grid-template-columns: 1fr; gap: 22px; padding-block: 58px 64px; }
+}
+@media (max-width: 360px) {
+  .contenedor { width: calc(100% - 28px); }
+  nav { gap: 15px; }
+  nav a { font-size: .82rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
